@@ -15,7 +15,7 @@ const items = ref(itemRange.map(key => {
 </script>
 
 <template>
-    <div style="width: 350px">
+    <div style="max-width: 350px">
         <SideScroll :items="items" />
     </div>
 </template>

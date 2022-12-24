@@ -19,7 +19,10 @@ const onScrollHandler = e => {
 }
 
 onMounted(() => {
-    sideScrollerMax = sideScroller.value.scrollLeftMax;
+    sideScrollerMax = (sideScroller.value.hasOwnProperty('scrollLeftMax'))
+        ? sideScroller.value.scrollLeftMax
+        : sideScroller.value.scrollWidth - sideScroller.value.clientWidth;
+
     sideScroller.value.addEventListener('scroll', onScrollHandler);
 })
 
